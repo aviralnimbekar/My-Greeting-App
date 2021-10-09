@@ -4,6 +4,7 @@ import com.greetingapp.Model.User;
 import com.greetingapp.dto.UserDto;
 import com.greetingapp.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,5 +34,10 @@ public class GreetingAppController {
     @GetMapping("/get_all_greetings")
     public List<User> findAllGreeting() {
         return greetingService.getAllGreet();
+    }
+
+    @DeleteMapping("/delete_greet")
+    public String deleteGreet(@RequestParam int id) {
+        return greetingService.deleteGreet(id);
     }
 }
