@@ -11,8 +11,8 @@
     <groupId>com.greetingApp</groupId>
     <artifactId>myGreetingApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>My Greeting App</name>
-    <description>My Greeting App</description>
+    <name>Greeting-App-Problem</name>
+    <description>Greeting-App-Problem</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -28,11 +28,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23</version>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -50,12 +45,6 @@
             <artifactId>modelmapper</artifactId>
             <version>2.4.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-            <version>2.5.4</version>
-        </dependency>
-
     </dependencies>
 
     <build>
