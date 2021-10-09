@@ -1,12 +1,10 @@
 package com.greetingapp.controller;
 
+import com.greetingapp.Model.User;
 import com.greetingapp.dto.UserDto;
 import com.greetingapp.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/greet")
@@ -23,5 +21,10 @@ public class GreetingAppController {
     @GetMapping("/customMessage")
     public String getCustomMessage(@RequestBody UserDto userDto) {
         return greetingService.getCustomMessage(userDto);
+    }
+
+    @GetMapping("/find_greeting")
+    public User findGreetById(@RequestParam int id) {
+        return greetingService.getGreetById(id);
     }
 }

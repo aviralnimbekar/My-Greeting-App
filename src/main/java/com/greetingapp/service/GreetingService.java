@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class GreetingService {
 
@@ -23,5 +25,10 @@ public class GreetingService {
         modelMapper.map(userDto, user);
         greetingRepository.save(user);
         return ("Hello " + user.getFirstName() + " " + user.getLastName());
+    }
+
+    public User getGreetById(int id) {
+        Optional<User> greetById = greetingRepository.findById(id);
+        return greetById.orElse(null);
     }
 }
